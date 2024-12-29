@@ -1,7 +1,9 @@
 const express = require('express');
-const { isValidUsernameController } = require('../controller/auth/isValidUsername.controller');
+const { isUsernameAvailableController } = require('../controller/auth/isUsernameAvailable.controller');
+const { isEmailAvailableController } = require('../controller/auth/isEmailAvailable.controller');
 const publicRoutes = express.Router();
 
-publicRoutes.post('/verifyUsername',isValidUsernameController);
+publicRoutes.post('/isAvailable/username',isUsernameAvailableController);
+publicRoutes.post('/isAvailable/email',isEmailAvailableController);
 
 module.exports = publicRoutes;
